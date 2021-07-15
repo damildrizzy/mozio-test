@@ -4,7 +4,9 @@ django-rest-auth==0.9.5
 djangorestframework==3.11.0
 djangorestframework-gis==0.17
 djangorestframework-jwt==1.11.0
- django-filter==2.4.0
+django-filter==2.4.0
 drf-yasg==1.20.0
+django-heroku==0.3.1
+gunicorn==20.1.0
 phonenumbers==8.12.27
 psycopg2-binary==2.8.6

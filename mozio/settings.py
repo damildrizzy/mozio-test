@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import django_heroku
 import os
 from pathlib import Path
 
@@ -150,3 +151,5 @@ REST_AUTH_SERIALIZERS = {'LOGIN_SERIALIZER': 'mozio.auth-serializer.LoginSeriali
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 ACCOUNT_EMAIL_REQUIRED = True
+
+django_heroku.settings(locals())
