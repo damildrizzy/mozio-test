@@ -23,7 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'random_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', False)
+
+if not DEBUG:
+    GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
+    GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
+
 
 ALLOWED_HOSTS = ['*']
 
