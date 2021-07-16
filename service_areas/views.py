@@ -13,6 +13,7 @@ from providers.permissions import IsLoggedInUser
 from providers.models import Provider
 
 
+
 class ServiceAreaViewset(ModelViewSet):
     queryset = ServiceArea.objects.all()
     serializer_class = ServiceAreaSerializer
