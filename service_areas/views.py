@@ -39,10 +39,10 @@ class ServiceAreaViewset(ModelViewSet):
 
 class QueryServiceAreas(APIView):
     """
-        long -- Longitude
-        lat -- Latitude
-        """
-    ...
+        Return a Service Area that Include the Point
+        :param lat
+        :param lat
+    """
 
     @method_decorator(cache_page(60 * 60 * 2))
     permission_classes = (AllowAny,)
