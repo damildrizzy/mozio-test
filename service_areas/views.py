@@ -1,3 +1,4 @@
+from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 from rest_framework import status
 from rest_framework.decorators import action
@@ -12,7 +13,6 @@ from .serializers import ServiceAreaSerializer
 from .filters import ServiceAreaFilter
 from providers.permissions import IsLoggedInUser
 from providers.models import Provider
-
 
 
 class ServiceAreaViewset(ModelViewSet):
@@ -44,9 +44,9 @@ class QueryServiceAreas(APIView):
         :param lat
     """
 
-    @method_decorator(cache_page(60 * 60 * 2))
     permission_classes = (AllowAny,)
 
+    @method_decorator(cache_page(60 * 60 * 2))
     def get(self, request, *args, **kwargs):
         long = request.GET.get('long', None)
         lat = request.GET.get('lat', None)
