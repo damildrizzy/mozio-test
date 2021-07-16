@@ -1,3 +1,4 @@
+from django.views.decorators.cache import cache_page
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -43,6 +44,7 @@ class QueryServiceAreas(APIView):
         """
     ...
 
+    @method_decorator(cache_page(60 * 60 * 2))
     permission_classes = (AllowAny,)
 
     def get(self, request, *args, **kwargs):
