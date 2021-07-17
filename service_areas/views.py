@@ -40,7 +40,7 @@ class ServiceAreaViewset(ModelViewSet):
 class QueryServiceAreas(APIView):
     """
         Return a Service Area that Include the Point
-        :param lat
+        :param long
         :param lat
     """
 
